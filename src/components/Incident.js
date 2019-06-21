@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React, { memo } from 'react'
 
-export class Incident extends Component {
-  render () {
-    return (
-      <div style={{border: '1px solid black'}}>
-        <p>{ this.props.title }</p>
-        <p>Assignee: { this.props.assignee }</p>
-        <p>Status: { this.props.status }</p>
-      </div>
-    )
-  }
-}
+export const Incident = memo(({title, assignee, status}) => (
+  <div style={{ border: '1px solid black' }}>
+    <p>{title}</p>
+    <p>Assignee: {assignee}</p>
+    <p>Status: {status}</p>
+  </div>
+));
