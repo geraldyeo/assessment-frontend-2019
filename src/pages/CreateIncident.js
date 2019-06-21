@@ -5,7 +5,7 @@ import {IncidentContext} from '../lib/incidents/reducer';
 
 export const CreateIncident = () => {
   const {dispatch} = useContext(IncidentContext);
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({ title: '', assignee: '', status: false});
   const handleChange = (k, v) => setFormValues({ ...formValues, [k]: v });
   const handleSubmit = e => {
     e.preventDefault();
@@ -13,10 +13,10 @@ export const CreateIncident = () => {
     if (title && assignee) {
       dispatch(createOneIncident({
         ...formValues,
-        status: formValues.status === 'on' ? 'Resolved' : 'Open',
+        status: formValues.status ? 'Resolved' : 'Open',
         key: cuid(),
       }));
-      setFormValues({ title: '', assignee: '' });
+      setFormValues({ title: '', assignee: '', status: false });
     }
   };
 
@@ -32,7 +32,7 @@ export const CreateIncident = () => {
       </label>
       <label>
         Resolved:
-        <input name="status" type="checkbox" checked={formValues.status} onChange={e => handleChange('status', e.target.value)}></input>
+        <input name="status" type="checkbox" value="Resolved" checked={formValues.status} onChange={e => handleChange('status', e.target.checked)}></input>
       </label>
       <button type="submit">Submit</button>
     </form>
