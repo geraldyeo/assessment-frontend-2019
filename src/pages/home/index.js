@@ -1,8 +1,8 @@
 import React, { useContext }        from 'react'
-import { Incident } from '../components/Incident'
-import {IncidentContext} from '../lib/incidents/reducer';
+import { Incident } from '../../components/incident';
+import { IncidentContext } from '../../lib/incidents/reducer';
 
-export function Home () {
+export const Home = () => {
   const {state:{incidents}} = useContext(IncidentContext);
   return (
     <div>
@@ -17,3 +17,5 @@ export function Home () {
     </div>
   )
 }
+
+export default Home;

@@ -1,8 +1,8 @@
 import React                              from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { CreateIncident }                 from './pages/CreateIncident'
-import { Home }                           from './pages/Home'
-import { Header }                         from './components/Header'
+import { CreateIncident }                 from './pages/create-incident'
+import { Home }                           from './pages/home'
+import { Header }                         from './components/header'
 import { IncidentProvider } from './lib/incidents/reducer';
 
 function App () {
