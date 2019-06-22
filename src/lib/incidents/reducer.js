@@ -3,7 +3,7 @@ import { CREATE_ONE_INCIDENT } from './actions';
 
 export const initialState = {
   incidents: [
-    { key: 'bcg_1', title: 'First incident', assignee: 'Admin', status: 'Resolved' }
+    { key: 'bcg_1', title: 'First incident', assignee: 'Admin', status: true }
   ]
 };
 
