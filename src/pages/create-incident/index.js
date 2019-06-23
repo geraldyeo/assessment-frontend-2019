@@ -1,11 +1,10 @@
 import React, {useContext} from 'react';
-import styled from 'styled-components';
 import cuid from 'cuid';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { StyledContainer } from '../../components/incident';
 import {createOneIncident} from '../../lib/incidents/actions';
 import {IncidentContext} from '../../lib/incidents/reducer';
+import * as ui from './styled';
 
 const IncidentSchema = Yup.object().shape({
   title: Yup.string()
@@ -19,10 +18,7 @@ const IncidentSchema = Yup.object().shape({
   status: Yup.boolean(),
 });
 
-const Container = styled(StyledContainer)`
-  width: 40vw;
-  min-width: 300px;
-`;
+
 
 export const CreateIncident = () => {
   const {dispatch} = useContext(IncidentContext);
@@ -44,14 +40,14 @@ export const CreateIncident = () => {
         onSubmit={handleSubmit}
       >
         {({values}) => (
-          <Container resolved={values.status}>
+          <ui.Container resolved={values.status}>
             <Form>
               <p>
                 <Field
                   name="title"
                   render={({field}) => (
                   <label htmlFor="title">Title:{' '}
-                    <input {...field} placeholder="title" />
+                    <ui.Input {...field} placeholder="title" />
                   </label>)}
                 />
                 <ErrorMessage name="title" component="div" />
@@ -61,7 +57,7 @@ export const CreateIncident = () => {
                   name="assignee"
                   render={({ field }) => (
                     <label htmlFor="assignee">Assignee:{' '}
-                      <input {...field} placeholder="assignee" />
+                      <ui.Input {...field} placeholder="assignee" />
                     </label>)}
                 />
                 <ErrorMessage name="assignee" component="div" />
@@ -76,9 +72,9 @@ export const CreateIncident = () => {
                 />
               </p>
               <br />
-              <button type="submit">Submit</button>
+              <ui.Button type="submit">Submit</ui.Button>
             </Form>
-          </Container>
+          </ui.Container>
         )}
       </Formik>
     </div>
