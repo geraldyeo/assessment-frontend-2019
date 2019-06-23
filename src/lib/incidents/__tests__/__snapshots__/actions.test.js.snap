@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Incident Actions createOneIncident should return an action object 1`] = `
+Object {
+  "payload": Object {
+    "assignee": "Admin",
+    "key": "bcg_1",
+    "status": true,
+    "title": "First incident",
+  },
+  "type": "CREATE_ONE_INCIDENT",
+}
+`;

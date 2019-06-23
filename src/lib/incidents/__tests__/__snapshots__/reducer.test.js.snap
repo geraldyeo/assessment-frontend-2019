@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Incident Reducer calling reducer with createOneIncident action adds to state 1`] = `
+Object {
+  "incidents": Array [
+    Object {
+      "assignee": "Admin",
+      "key": "bcg_1",
+      "status": true,
+      "title": "First incident",
+    },
+    Object {
+      "assignee": "Admin",
+      "key": "bcg_2",
+      "status": false,
+      "title": "Second incident",
+    },
+  ],
+}
+`;

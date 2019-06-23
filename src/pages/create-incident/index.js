@@ -49,8 +49,8 @@ export const CreateIncident = () => {
                   <label htmlFor="title">Title:{' '}
                     <ui.Input {...field} placeholder="title" />
                   </label>)}
-                />
-                <ErrorMessage name="title" component="div" />
+                />{' '}
+                <ErrorMessage name="title" component={ui.ErrorSpan} />
               </p>
               <p>
                 <Field
@@ -59,8 +59,8 @@ export const CreateIncident = () => {
                     <label htmlFor="assignee">Assignee:{' '}
                       <ui.Input {...field} placeholder="assignee" />
                     </label>)}
-                />
-                <ErrorMessage name="assignee" component="div" />
+                />{' '}
+                <ErrorMessage name="assignee" component={ui.ErrorSpan} />
               </p>
               <p>
                 <Field
