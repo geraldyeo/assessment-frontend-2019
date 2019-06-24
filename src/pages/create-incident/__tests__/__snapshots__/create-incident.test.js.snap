@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIncident component checking resolve checkbox should change card color 1`] = `"rgb(251, 244, 227)"`;
+
+exports[`CreateIncident component checking resolve checkbox should change card color 2`] = `"rgb(216, 237, 234)"`;

@@ -25,7 +25,9 @@ export const Button = styled.button`
   padding: 0.5rem 1rem;
 `;
 
-export const ErrorSpan = styled.span`
+export const ErrorSpan = styled.span.attrs({
+  'data-testid': 'error-message'
+})`
   color: #e76f51;
   font-size: 0.875rem;
 `;

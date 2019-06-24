@@ -14,7 +14,6 @@ export const reducer = (state, { type, payload }) => {
   switch(type) {
     case CREATE_ONE_INCIDENT: {
       if (payload) {
-        console.log(payload);
         return {...state, incidents: [...state.incidents, payload]};
       }
     }
